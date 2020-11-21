@@ -5,8 +5,9 @@
  */
 package com.services;
 
-import com.mysql.jdbc.Connection;
+
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -25,8 +26,27 @@ public class ServiceCategory {
     }
     
     public ArrayList<Category> getCategories() throws SQLException {
-        A
+        ArrayList<Category> results = new Arraylist<>();
+        String request = "SELECT * FROM `Categories`";
+        Statement stm = cnx.createStatement();
+        ResultSet rst = stm.executeQuery(request);
+    
+    while (rst.next()) {
+            Category c = new Category();
+            c.setId(rst.getInt("id"));
+            c.setName(rst.getString(2));
+            
+            results.add(c);
+        }
+    return null;
+    
     }
     
+   public void deleteCategory(int id) throws SQLException {
+       String request = "DELETE FROM `Categories` WHERE id =" + id;
+       Statement stm = cnx.createStatement();
+       stm.executeUpdate(request);
     
+}
+   
 }
