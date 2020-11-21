@@ -1,4 +1,4 @@
-package pkgMinty.utils;
+package com.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -15,7 +15,7 @@ import java.sql.SQLException;
  * @author MediaStudio
  */
 public class MyConnection {
-    private String url = "jdbc:mysql://localhost:3306/bookstrore";
+    private String url = "jdbc:mysql://localhost:3306/bookstore";
     private String login = "root";
     private String password = "";
 

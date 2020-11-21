@@ -13,6 +13,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import com.models.Author;
+import com.util.MyConnection;
+
 
 /**
  *
@@ -25,10 +27,12 @@ public class ServiceAuthor {
     public ServiceAuthor() {
         cnx = MyConnection.getInstance().getConnection();
     }
+    
+   
 
     public void addAuthor(Author a) throws SQLException {
-        String request = "INSERT INTO `Author` (`id`, `name`)"
-                + " VALUES (NULL, '" + a.getName() +  "')";
+        String request = "INSERT INTO `authors`(`id`, `name`, `description`, `picUrl`)"
+                + " VALUES (NULL, '" +  a.getName()+"', '"+ a.getDescription() +"', '"+a.getPicUrl()+"')";
 
         Statement stm = cnx.createStatement();
         stm.executeUpdate(request);
@@ -45,7 +49,7 @@ public class ServiceAuthor {
             a.setId(rst.getInt(1));
             a.setName(rst.getString(2));
             a.setDescription(rst.getString(3));
-            a.setPicUrl(res.getString(4));
+            a.setPicUrl(rst.getString(4));
             
             results.add(a);
         }
@@ -72,7 +76,8 @@ public class ServiceAuthor {
     }
 
     public void updateAuthor(Author a) throws SQLException {
-        String request = "UPDATE `Author` SET `Name`=?,` "
+        
+        String request="UPDATE `authors` SET `name`=?,`description`=?,`picUrl`=?"
                 + "WHERE `id` = ?";
         PreparedStatement pst = cnx.prepareStatement(request);
 

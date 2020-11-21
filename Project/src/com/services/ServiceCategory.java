@@ -6,9 +6,13 @@
 package com.services;
 
 
+import com.models.Category;
 import java.sql.SQLException;
 import java.util.ArrayList;
-
+import com.util.MyConnection;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 /**
  *
  * @author ali
@@ -26,15 +30,15 @@ public class ServiceCategory {
     }
     
     public ArrayList<Category> getCategories() throws SQLException {
-        ArrayList<Category> results = new Arraylist<>();
+        ArrayList<Category> results = new ArrayList<Category>();
         String request = "SELECT * FROM `Categories`";
         Statement stm = cnx.createStatement();
         ResultSet rst = stm.executeQuery(request);
     
     while (rst.next()) {
             Category c = new Category();
-            c.setId(rst.getInt("id"));
-            c.setName(rst.getString(2));
+            c.SetId(rst.getInt("id"));
+            c.SetName(rst.getString(2));
             
             results.add(c);
         }

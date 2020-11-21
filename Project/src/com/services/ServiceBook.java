@@ -3,17 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pkgMinty.services;
+package com.services;
 
+import com.models.Book;
+import com.util.MyConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import pkgMinty.entities.Book;
-import pkgMinty.entities.User;
-import pkgMinty.utils.MyConnection;
+
 
 /**
  *

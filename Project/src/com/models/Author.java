@@ -22,8 +22,14 @@ public class Author {
         this.PicUrl = PicUrl;
     }
 
+    public Author(String name, String description, String PicUrl) {
+        this.name = name;
+        this.description = description;
+        this.PicUrl = PicUrl;
+    }
+
     public Author() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     public void setId(int id) {
