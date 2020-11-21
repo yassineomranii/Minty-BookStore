@@ -19,7 +19,11 @@ public class Author {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.PloUrl = PloUrl;
+        this.PicUrl = PicUrl;
+    }
+
+    public Author() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public void setId(int id) {
@@ -34,9 +38,7 @@ public class Author {
         this.description = description;
     }
 
-    public void setPloUrl(String PloUrl) {
-        this.PloUrl = PloUrl;
-    }
+    
 
     public int getId() {
         return id;
@@ -50,9 +52,15 @@ public class Author {
         return description;
     }
 
-    public String getPloUrl() {
-        return PloUrl;
+    public String getPicUrl() {
+        return PicUrl;
     }
+
+    public void setPicUrl(String PicUrl) {
+        this.PicUrl = PicUrl;
+    }
+
+   
     
     
 }
