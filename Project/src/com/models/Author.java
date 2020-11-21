@@ -13,7 +13,7 @@ public class Author {
     private int id ;
     private String name ;
     private String description;
-    private String PloUrl;
+    private String PicUrl;
 
     public Author(int id, String name, String description, String PloUrl) {
         this.id = id;
