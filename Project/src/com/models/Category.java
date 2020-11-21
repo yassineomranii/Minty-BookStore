@@ -37,6 +37,10 @@ public class Category {
     public void SetName(String name){
         this.name=name;
     }
+     public String toString() {
+        return "Category{" + "id=" + id + ", name=" + name +  '}';
+    }
+    
     
    
     
