@@ -2,3 +2,5 @@
 ./Project/build/
 ./Project/dist/
 ./Project/nbproject/project.properties
+/JavaFXApplication9/nbproject/private/
+/Project/dist/

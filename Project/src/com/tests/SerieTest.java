@@ -13,7 +13,7 @@ import java.sql.SQLException;
  *
  * @author Lenovo
  */
-public class testSerie {
+public class SerieTest {
     public static void main(String[] args) {
             ServiceSerie sl = new ServiceSerie();
             try {

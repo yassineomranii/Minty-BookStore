@@ -51,7 +51,7 @@ public class ServiceCommandLine {
             results.add(lng);
         }
 
-        return results;
+        return results; 
     }
     
     public void updateCommandLine(CommandLine lng) throws SQLException {

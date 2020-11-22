@@ -13,7 +13,7 @@ import java.sql.SQLException;
  *
  * @author Lenovo
  */
-public class testLangue {
+public class LangueTest {
         public static void main(String[] args) {
             ServiceLangue sl = new ServiceLangue();
             try {
