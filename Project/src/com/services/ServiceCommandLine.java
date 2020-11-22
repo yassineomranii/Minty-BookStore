@@ -5,6 +5,7 @@
  */
 package com.services;
 
+
 import com.models.CommandLine;
 import com.util.MyConnection;
 import java.sql.Connection;
@@ -27,7 +28,7 @@ public class ServiceCommandLine {
         cnx = MyConnection.getInstance().getConnection();
     }
 
-    public void addLigneCommande(CommandLine lng) throws SQLException {
+    public void addCommandLine(CommandLine lng) throws SQLException {
         String request = "INSERT INTO `commandline` (`id`, `quantity', 'idCommandList', 'idBook')"
                 + " VALUES (NULL, '" + lng.getQuantity() + lng.getIdCommandList()+ lng.getIdBook()+ "')";
 
@@ -35,7 +36,7 @@ public class ServiceCommandLine {
         stm.executeUpdate(request);
     }
     
-    public ArrayList<CommandLine> getLigneCommande() throws SQLException {
+    public ArrayList<CommandLine> getCommandLine() throws SQLException {
         ArrayList<CommandLine> results = new ArrayList<>();
         String request = "SELECT * FROM `commandline`";
         Statement stm = cnx.createStatement();
@@ -53,7 +54,7 @@ public class ServiceCommandLine {
         return results;
     }
     
-    public void updateListeCommande(CommandLine lng) throws SQLException {
+    public void updateCommandLine(CommandLine lng) throws SQLException {
         String request = "UPDATE `commandlie` SET `quantity`=? 'idCommandLst'=? 'idBook'=?"
                 + "WHERE `id` = ?";
         PreparedStatement pst = cnx.prepareStatement(request);

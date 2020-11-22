@@ -18,10 +18,10 @@ import java.util.ArrayList;
  *
  * @author ihebf
  */
-public class WishListService {
+public class ServiceWishList {
     private Connection cnx;
     
-    public WishListService(){
+    public ServiceWishList(){
         cnx=MyConnection.getInstance().getConnection();
     }
     

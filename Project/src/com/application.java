@@ -13,14 +13,14 @@ import com.models.CommandList;
 import com.models.Comment;
 import com.models.Interaction;
 import com.models.WishList;
-import com.services.InteractionService;
+import com.services.ServiceInteraction;
 import com.services.ServiceAuthor;
 import com.services.ServiceCategory;
 import com.services.ServiceCommandLine;
 import com.services.ServiceCommandList;
 import com.services.ServiceComment;
 import com.services.ServicePreferAuthor;
-import com.services.WishListService;
+import com.services.ServiceWishList;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -86,7 +86,7 @@ public class application extends Application {
 
 
  //++++++++++++++++ Test Interaction ++++++++++++++++++++++
-           // InteractionService is=new InteractionService();
+           // ServiceInteraction is=new ServiceInteraction();
            // Interaction i=new Interaction(1,1,4,0); // (idUser,idBook,ratingValue,liked)
            // Interaction i2=new Interaction(1,1,2,1);
             
@@ -112,7 +112,7 @@ public class application extends Application {
     
     
     //++++++++++++++++ Test WishList ++++++++++++++++++++++++++++
-            //WishListService ws=new WishListService();
+            //ServiceWishList ws=new ServiceWishList();
             //WishList w1=new WishList(1,1,"Wish List 1"); // (idUser,idBook,name)
             //WishList w2=new WishList(1,1,"Wish List 2");
             

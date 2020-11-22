@@ -18,10 +18,10 @@ import java.util.ArrayList;
  *
  * @author ihebf
  */
-public class InteractionService {
+public class ServiceInteraction {
     private Connection cnx;
     
-    public InteractionService(){
+    public ServiceInteraction(){
         cnx=MyConnection.getInstance().getConnection();
     }
     

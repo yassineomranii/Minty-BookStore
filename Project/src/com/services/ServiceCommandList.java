@@ -27,7 +27,7 @@ public class ServiceCommandList {
         cnx = MyConnection.getInstance().getConnection();
     }
 
-    public void addListeCommande(CommandList lc) throws SQLException {
+    public void addCommandList(CommandList lc) throws SQLException {
         String request = "INSERT INTO `commandlist` (`id`, `status`, `totalprice`, 'idUser')"
                 + " VALUES (NULL, '" + lc.getStatus() + "', '" + lc.getTotalprice() + "', '"+ lc.getIdUser()+ "')";
 
@@ -35,7 +35,7 @@ public class ServiceCommandList {
         stm.executeUpdate(request);
     }
     
-    public ArrayList<CommandList> getListeCommande() throws SQLException {
+    public ArrayList<CommandList> getCommandList() throws SQLException {
         ArrayList<CommandList> results = new ArrayList<>();
         String request = "SELECT * FROM `commandlist`";
         Statement stm = cnx.createStatement();
@@ -53,7 +53,7 @@ public class ServiceCommandList {
         return results;
     }
 
-    public void updateListeCommande(CommandList lc) throws SQLException {
+    public void updateCommandList(CommandList lc) throws SQLException {
         String request = "UPDATE `commandlist` SET `status`=?,`totalprice`=?, 'idUser'=? "
                 + "WHERE `id` = ?";
         PreparedStatement pst = cnx.prepareStatement(request);
