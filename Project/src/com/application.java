@@ -80,58 +80,57 @@ public class application extends Application {
 
 
  //++++++++++++++++ Test Interaction ++++++++++++++++++++++
-            InteractionService is=new InteractionService();
-            Interaction i=new Interaction(1,1,4,0); // (idUser,idBook,ratingValue,liked)
-            Interaction i2=new Interaction(1,1,2,1);
+           // InteractionService is=new InteractionService();
+           // Interaction i=new Interaction(1,1,4,0); // (idUser,idBook,ratingValue,liked)
+           // Interaction i2=new Interaction(1,1,2,1);
             
         //  Ajout de 2 interactions
-            is.addInteraction(i);
-            is.addInteraction(i2);
+           // is.addInteraction(i);
+           // is.addInteraction(i2);
         
         //  Affichage des interactions
-            System.out.println(is.getInteractions());
+           // System.out.println(is.getInteractions());
             
         //  Modification d'une interaction
             
-            Interaction i3=new Interaction(8,1,1,2,1);
-            is.updateInteraction(i3);
-            System.out.println(is.getInteraction(8));
+           // Interaction i3=new Interaction(8,1,1,2,1);
+           // is.updateInteraction(i3);
+           // System.out.println(is.getInteraction(8));
             
         //  Suppression d'une interaction
                 
-            is.deleteInteraction(4);
-            System.out.println(is.getInteractions());
+           // is.deleteInteraction(4);
+           // System.out.println(is.getInteractions());
             
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
-    System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
     
     //++++++++++++++++ Test WishList ++++++++++++++++++++++++++++
-            WishListService ws=new WishListService();
-            WishList w1=new WishList(1,1,"Wish List 1"); // (idUser,idBook,name)
-            WishList w2=new WishList(1,1,"Wish List 2");
+            //WishListService ws=new WishListService();
+            //WishList w1=new WishList(1,1,"Wish List 1"); // (idUser,idBook,name)
+            //WishList w2=new WishList(1,1,"Wish List 2");
             
         //  Ajout de 2 wishlists
-            ws.addWishList(w1);
-            ws.addWishList(w2);
+            //ws.addWishList(w1);
+            //ws.addWishList(w2);
         
         //  Affichage des wishlists
-            System.out.println(ws.getWishLists());
+          //  System.out.println(ws.getWishLists());
             
         //  Modification d'une wishlist
             
-            WishList w3=new WishList();
-            w3.setId(3);
-            w3.setName("Wish List updated");
-            ws.updateWishList(w3);
-            System.out.println(ws.getWishList(3));
+          //  WishList w3=new WishList();
+          //  w3.setId(3);
+          //  w3.setName("Wish List updated");
+          //  ws.updateWishList(w3);
+          //  System.out.println(ws.getWishList(3));
             
         //  Suppression d'une wishlist
             
-            ws.deleteWishList(4);
-            System.out.println(ws.getWishLists());
+          //  ws.deleteWishList(4);
+          //  System.out.println(ws.getWishLists());
             
-    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    
 
     }
     
