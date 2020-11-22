@@ -69,10 +69,11 @@ public class WishListService {
     }
 
     public void updateWishList(WishList w) throws SQLException {
-        String request = "UPDATE `wishlist` SET `name`=?";
+        String request = "UPDATE `wishlist` SET `name`=? WHERE `id`=?";
         PreparedStatement pst = cnx.prepareStatement(request);
 
         pst.setString(1, w.getName());
+        pst.setInt(2, w.getId());
       
         pst.executeUpdate();
 
