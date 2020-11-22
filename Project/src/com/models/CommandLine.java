@@ -9,22 +9,22 @@ package com.models;
  *
  * @author ali
  */
-public class LigneCommande {
+public class CommandLine {
     private int id;
     private int quantity;
     private int idCommandList;
     private int idBook;
     
-    public LigneCommande(){}
+    public CommandLine(){}
 
-    public LigneCommande(int id, int quantity, int idCommandList, int idBook) {
+    public CommandLine(int id, int quantity, int idCommandList, int idBook) {
         this.id = id;
         this.quantity = quantity;
         this.idCommandList = idCommandList;
         this.idBook = idBook;
     }
 
-    public LigneCommande(int quantity, int idCommandList, int idBook) {
+    public CommandLine(int quantity, int idCommandList, int idBook) {
         this.quantity = quantity;
         this.idCommandList = idCommandList;
         this.idBook = idBook;
@@ -66,7 +66,7 @@ public class LigneCommande {
     
     
    public String toString() {
-        return "LigneCommande{" + "id=" + id + ", quantity=" + quantity + ", idCommandList=" +idCommandList+ ", idBook=" + idBook +'}';
+        return "CommandLine{" + "id=" + id + ", quantity=" + quantity + ", idCommandList=" +idCommandList+ ", idBook=" + idBook +'}';
     }
 
     

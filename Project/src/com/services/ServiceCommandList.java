@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -5,7 +6,8 @@
  */
 package com.services;
 
-import com.models.ListeCommande;
+import com.models.CommandList;
+import com.util.MyConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,15 +19,15 @@ import java.util.ArrayList;
  *
  * @author ali
  */
-public class ServiceListeCommande {
+public class ServiceCommandList {
     
     private Connection cnx;
 
-    public ServiceListeCommande() {
+    public ServiceCommandList() {
         cnx = MyConnection.getInstance().getConnection();
     }
 
-    public void addListeCommande(ListeCommande lc) throws SQLException {
+    public void addCommandList(CommandList lc) throws SQLException {
         String request = "INSERT INTO `commandlist` (`id`, `status`, `totalprice`, 'idUser')"
                 + " VALUES (NULL, '" + lc.getStatus() + "', '" + lc.getTotalprice() + "', '"+ lc.getIdUser()+ "')";
 
@@ -33,14 +35,14 @@ public class ServiceListeCommande {
         stm.executeUpdate(request);
     }
     
-    public ArrayList<ListeCommande> getListeCommande() throws SQLException {
-        ArrayList<ListeCommande> results = new ArrayList<>();
+    public ArrayList<CommandList> getCommandList() throws SQLException {
+        ArrayList<CommandList> results = new ArrayList<>();
         String request = "SELECT * FROM `commandlist`";
         Statement stm = cnx.createStatement();
         ResultSet rst = stm.executeQuery(request);
 
         while (rst.next()) {
-            ListeCommande lc = new ListeCommande();
+            CommandList lc = new CommandList();
             lc.setId(rst.getInt("id"));
             lc.setStatus(rst.getString(2));
             lc.setTotalprice(rst.getFloat(3));
@@ -51,7 +53,7 @@ public class ServiceListeCommande {
         return results;
     }
 
-    public void updateListeCommande(ListeCommande lc) throws SQLException {
+    public void updateCommandList(CommandList lc) throws SQLException {
         String request = "UPDATE `commandlist` SET `status`=?,`totalprice`=?, 'idUser'=? "
                 + "WHERE `id` = ?";
         PreparedStatement pst = cnx.prepareStatement(request);
@@ -64,7 +66,7 @@ public class ServiceListeCommande {
 
     }
     
-     public void deleteListeCommande(int id) throws SQLException {
+     public void deleteCommandList(int id) throws SQLException {
         String request = "DELETE FROM `commandlist` WHERE id =" + id;
         Statement stm = cnx.createStatement();
         stm.executeUpdate(request);
