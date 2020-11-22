@@ -5,7 +5,8 @@
  */
 package com.services;
 
-import com.models.LigneCommande;
+import com.models.CommandLine;
+import com.util.MyConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,15 +18,15 @@ import java.util.ArrayList;
  *
  * @author ali
  */
-public class ServiceLigneCommande {
+public class ServiceCommandLine {
     
     private Connection cnx;
 
-    public ServiceLigneCommande() {
+    public ServiceCommandLine() {
         cnx = MyConnection.getInstance().getConnection();
     }
 
-    public void addLigneCommande(LigneCommande lng) throws SQLException {
+    public void addLigneCommande(CommandLine lng) throws SQLException {
         String request = "INSERT INTO `commandline` (`id`, `quantity', 'idCommandList', 'idBook')"
                 + " VALUES (NULL, '" + lng.getQuantity() + lng.getIdCommandList()+ lng.getIdBook()+ "')";
 
@@ -33,14 +34,14 @@ public class ServiceLigneCommande {
         stm.executeUpdate(request);
     }
     
-    public ArrayList<LigneCommande> getLigneCommande() throws SQLException {
-        ArrayList<LigneCommande> results = new ArrayList<>();
+    public ArrayList<CommandLine> getLigneCommande() throws SQLException {
+        ArrayList<CommandLine> results = new ArrayList<>();
         String request = "SELECT * FROM `commandline`";
         Statement stm = cnx.createStatement();
         ResultSet rst = stm.executeQuery(request);
 
         while (rst.next()) {
-            LigneCommande lng = new LigneCommande();
+            CommandLine lng = new CommandLine();
             lng.setId(rst.getInt("id"));
             lng.setQuantity(rst.getInt(2));
             lng.setIdCommandList(rst.getInt(3));
@@ -51,7 +52,7 @@ public class ServiceLigneCommande {
         return results;
     }
     
-    public void updateListeCommande(LigneCommande lng) throws SQLException {
+    public void updateListeCommande(CommandLine lng) throws SQLException {
         String request = "UPDATE `commandlie` SET `quantity`=? 'idCommandLst'=? 'idBook'=?"
                 + "WHERE `id` = ?";
         PreparedStatement pst = cnx.prepareStatement(request);

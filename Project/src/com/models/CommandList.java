@@ -9,24 +9,24 @@ package com.models;
  *
  * @author ali
  */
-public class ListeCommande {
+public class CommandList {
     
     private int id;
     private String status;
     private float totalprice;
     private int idUser;
 
-    public ListeCommande() {
+    public CommandList() {
     }
 
-    public ListeCommande(int id, String status, float totalprice, int idUser) {
+    public CommandList(int id, String status, float totalprice, int idUser) {
         this.id = id;
         this.status = status;
         this.totalprice = totalprice;
         this.idUser= idUser;
     }
 
-    public ListeCommande(String status, float totalprice, int idUser) {
+    public CommandList(String status, float totalprice, int idUser) {
         this.status = status;
         this.totalprice = totalprice;
         this.idUser= idUser;

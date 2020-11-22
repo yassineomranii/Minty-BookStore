@@ -46,7 +46,7 @@ public class application extends Application {
      */
     public static void main(String[] args) throws SQLException {
   
-//        AUTHOR CRUD TEST 
+//  ++++++++++++++++ AUTHOR CRUD TEST ++++++++++++++++++++++
 //        ServiceAuthor sa = new ServiceAuthor();
 //        ServicePreferAuthor spa = new ServicePreferAuthor();
 //        try {
@@ -65,7 +65,7 @@ public class application extends Application {
 //            System.out.println("ereeur");
 //        }
         
-//        Comments CRUD TEST 
+// ++++++++++++++++  Comments CRUD TEST  ++++++++++++++++++++++
 //        ServiceComment sc = ServiceComment.getInstance();
 //        sc.addComment(new Comment("Nice book"), 1, 2); 
 //        ArrayList<Comment> comments = sc.getComments();
@@ -129,7 +129,7 @@ public class application extends Application {
             
           //  ws.deleteWishList(4);
           //  System.out.println(ws.getWishLists());
-            
+            launch(args);
     
 
     }
