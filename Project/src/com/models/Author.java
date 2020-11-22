@@ -19,7 +19,7 @@ public class Author {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.PicUrl = PicUrl;
+        this.PicUrl = PloUrl;
     }
 
     public Author(String name, String description, String PicUrl) {
@@ -65,6 +65,13 @@ public class Author {
     public void setPicUrl(String PicUrl) {
         this.PicUrl = PicUrl;
     }
+
+    @Override
+    public String toString() {
+        return "Author{" + "id=" + id + ", name=" + name + ", description=" + description + ", PicUrl=" + PicUrl + '}';
+    }
+    
+    
 
    
     
