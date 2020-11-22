@@ -20,14 +20,14 @@ import java.util.ArrayList;
  */
 public class ServiceComment {
     
-    public ServiceComment INSTANCE;
+    public static ServiceComment INSTANCE;
     private Connection con; 
     
     private ServiceComment() {
         con =  MyConnection.getInstance().getConnection();
     }
     
-    public ServiceComment getInstance() {
+    public static ServiceComment getInstance() {
         if (INSTANCE == null) {
             INSTANCE = new ServiceComment();
         }
@@ -41,7 +41,7 @@ public class ServiceComment {
             PreparedStatement pst = con.prepareStatement(insert);
             pst.setInt(1, userId);
             pst.setInt(2, bookId);
-            pst.setString(2, c.getBody());
+            pst.setString(3, c.getBody());
             pst.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -79,7 +79,7 @@ public class ServiceComment {
         ArrayList<Comment> result = new ArrayList<Comment>();
         
         
-        String fetch = "SELECT * FROM comoments";
+        String fetch = "SELECT * FROM comments";
         
         try {
             Statement statement = con.createStatement();

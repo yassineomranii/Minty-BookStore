@@ -7,9 +7,12 @@ package com;
 
 import com.models.Author;
 import com.models.AuthorPrefer;
+import com.models.Comment;
 import com.services.ServiceAuthor;
+import com.services.ServiceComment;
 import com.services.ServicePreferAuthor;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Application;
@@ -38,27 +41,40 @@ public class application extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
-        ServiceAuthor sa = new ServiceAuthor();
-        ServicePreferAuthor spa = new ServicePreferAuthor();
-        try {
+  
+//        AUTHOR CRUD TEST 
+//        ServiceAuthor sa = new ServiceAuthor();
+//        ServicePreferAuthor spa = new ServicePreferAuthor();
+//        try {
 //            AuthorPrefer ap=new AuthorPrefer(1,1);
 //            spa.addPreferAuthor(ap);
 //            spa.updateAuthorPrefer(ap);
-            spa.deleteAuthorPrefer(1);
-            System.out.println(spa.getAuthorPrefer(2));
+//            spa.deleteAuthorPrefer(1);
+//            System.out.println(spa.getAuthorPrefer(2));
 //            sa.addAuthor(new Author("a", "a", ""));
 //            sa.deleteAuthor(1);
 //            Author a = new Author(2, "ggg", "gg", "mlml");
 //            sa.updateAuthor(a);
 //                System.out.println(sa.getAuthors());
 //                System.out.println(sa.getAuthor(2));
-        } catch (SQLException ex) {
-            System.out.println("ereeur");
-        }
+//        } catch (SQLException ex) {
+//            System.out.println("ereeur");
+//        }
         
-        
-        
+//        Comments CRUD TEST 
+//        ServiceComment sc = ServiceComment.getInstance();
+//        sc.addComment(new Comment("Nice book"), 1, 2); 
+//        ArrayList<Comment> comments = sc.getComments();
+//        for (Comment c : comments) {
+//            System.out.println(c.toString());
+//        }
+//        sc.editComment(3, "NiCE BOOK BOOK");
+//        for (Comment c : sc.getComments()) {
+//            System.out.println(c.toString());
+//        }
+//          sc.deleteComment(3);
+
+
     }
     
 }
