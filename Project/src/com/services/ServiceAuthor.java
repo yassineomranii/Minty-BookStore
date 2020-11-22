@@ -40,7 +40,7 @@ public class ServiceAuthor {
 
     public ArrayList<Author> getAuthors() throws SQLException {
         ArrayList<Author> results = new ArrayList<>();
-        String request = "SELECT * FROM `Author`";
+        String request = "SELECT * FROM `authors`";
         Statement stm = cnx.createStatement();
         ResultSet rst = stm.executeQuery(request);
 
@@ -58,7 +58,7 @@ public class ServiceAuthor {
     }
 
     public Author getAuthor(int id) throws SQLException {
-        String request = "SELECT * FROM `Author` WHERE id =" + id;
+        String request = "SELECT * FROM `authors` WHERE id =" + id;
         Statement stm = cnx.createStatement();
         ResultSet rst = stm.executeQuery(request);
 
@@ -82,13 +82,15 @@ public class ServiceAuthor {
         PreparedStatement pst = cnx.prepareStatement(request);
 
         pst.setString(1, a.getName());
-        pst.setInt(3, a.getId());
+        pst.setString(2, a.getDescription());
+        pst.setString(3, a.getPicUrl());
+        pst.setInt(4, a.getId());
         pst.executeUpdate();
 
     }
 
     public void deleteAuthor(int id) throws SQLException {
-        String request = "DELETE FROM `Author` WHERE id =" + id;
+        String request = "DELETE FROM `authors` WHERE id =" + id;
         Statement stm = cnx.createStatement();
         stm.executeUpdate(request);
     }
