@@ -15,7 +15,7 @@ import java.sql.SQLException;
  * @author MediaStudio
  */
 public class MyConnection {
-    private String url = "jdbc:mysql://localhost:3306/bookstore";
+    private String url = "jdbc:mysql://localhost:3306/mintybookstore";
     private String login = "root";
     private String password = "";
 

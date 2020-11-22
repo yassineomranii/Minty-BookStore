@@ -37,12 +37,7 @@ public class application extends Application {
      */
     public static void main(String[] args) {
         
-        ServiceAuthor sa = new ServiceAuthor();
-        try {
-            sa.addAuthor(new Author("a", "a", ""));
-        } catch (SQLException ex) {
-            System.out.println("Exception insertion autheur");
-        }
+        
         
         
     }
