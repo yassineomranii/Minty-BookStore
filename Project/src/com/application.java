@@ -15,11 +15,13 @@ import com.models.Interaction;
 import com.models.WishList;
 import com.services.ServiceInteraction;
 import com.services.ServiceAuthor;
+import com.services.ServiceBook;
 import com.services.ServiceCategory;
 import com.services.ServiceCommandLine;
 import com.services.ServiceCommandList;
 import com.services.ServiceComment;
 import com.services.ServicePreferAuthor;
+import com.services.ServiceUser;
 import com.services.ServiceWishList;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -70,7 +72,34 @@ public class application extends Application {
         //++++++++++++++++ Test Liste de Commande ++++++++++++++++++++++
 
         //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        
         launch(args);
+        
+//        ServiceUser us = new ServiceUser();
+        // CRUD ENTITY USER BY Yasser
+//        try {
+//            //us.addUser(new User("yasser", "yasser.dghais@esprit.tn", "PASSWORD+58", "client", "52190201", "Nabeul", "profilePicture"));
+//            //idUser=8
+//            us.updateUser(new User(8,"yasser DGHAIS", "yasser.dghais@esprit.tn", "PASSWORD+58", "ADMIN", "52190201", "Nabeul", "profilePicture"));
+//            us.deleteUser(9);
+//            System.out.println(us.getUser(8));
+//            System.out.println(us.getUsers());
+//        } catch (Exception e) {
+//            System.out.println("Exception Table User");
+//        }
+        //CRUD ENTITY BOOK By Yasser
+        ServiceBook sb = new ServiceBook();
+        try {
+//            sb.addBook(new Book(1, 1, 1, 1, 1, 1, "le long chemin vers la liberté", "Mandela", "IMG", "20/1/2000", 12));
+            //ID=6
+//            sb.updateBook(new Book(6,1, 1, 1, 1, 1, 1, "le long chemin vers la liberté", "Nelson Mandela", "IMG", "20/1/2000", 12));
+//            sb.deleteBook(4);
+              System.out.println(sb.getBook(6));
+              System.out.println(sb.getBooks());
+              
+        } catch (Exception e) {
+            System.out.println("Exception Table BOOK");
+        }
 
     }
 
