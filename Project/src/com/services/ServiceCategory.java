@@ -7,10 +7,12 @@ package com.services;
 
 
 import com.models.Category;
+import com.models.CommandLine;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import com.util.MyConnection;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 /**
@@ -52,5 +54,15 @@ public class ServiceCategory {
        stm.executeUpdate(request);
     
 }
+   public void updateCategory(Category c) throws SQLException {
+        String request = "UPDATE `categories` SET `name`=? "
+                + "WHERE `id` = ?";
+        PreparedStatement pst = cnx.prepareStatement(request);
+
+        pst.setString(1, c.getName());
+        pst.setInt(2, c.getId());
+        pst.executeUpdate();
+
+    }
    
 }

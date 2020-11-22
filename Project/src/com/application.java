@@ -7,11 +7,17 @@ package com;
 
 import com.models.Author;
 import com.models.AuthorPrefer;
+import com.models.Category;
+import com.models.CommandLine;
+import com.models.CommandList;
 import com.models.Comment;
 import com.models.Interaction;
 import com.models.WishList;
 import com.services.InteractionService;
 import com.services.ServiceAuthor;
+import com.services.ServiceCategory;
+import com.services.ServiceCommandLine;
+import com.services.ServiceCommandList;
 import com.services.ServiceComment;
 import com.services.ServicePreferAuthor;
 import com.services.WishListService;
@@ -129,6 +135,85 @@ public class application extends Application {
             
           //  ws.deleteWishList(4);
           //  System.out.println(ws.getWishLists());
+          
+
+              //++++++++++++++++ Test Category++++++++++++++++++++++
+         //   ServiceCategory cs = new ServiceCategory();
+           // Category c2 = new Category("Drama"); // (name)
+           // Category c3 = new Category("Action");
+            
+        //  Ajout de 2 categories
+          //  cs.addCategory(c2);
+          //  cs.addCategory(c3);
+        
+        //  Affichage des categories
+          //  System.out.println(cs.getCategories());
+            
+        //  Modification d'une categorie
+            
+         //   Category c4= new Category(2,"Adventure");
+         //   cs.updateCategory(c4);
+           // System.out.println(cs.getCategories());
+            
+        //  Suppression d'une interaction
+                
+          //  cs.deleteCategory(1);
+          //  System.out.println(cs.getCategories());
+            
+    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    
+    // System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+    
+    //++++++++++++++++ Test CommandLine ++++++++++++++++++++++++++++
+         //   ServiceCommandLine scl = new ServiceCommandLine();
+         //   CommandLine cl1 = new CommandLine(11,3,5); // (quantity,idCommandList,idBook)
+         //   CommandLine cl2 = new CommandLine(7,2,4);
+            
+        //  Ajout de 2 wishlists
+         //   scl.addCommandLine(cl1);
+         //   scl.addCommandLine(cl2);
+        
+        //  Affichage des lignes de commandes
+          //  System.out.println(scl.getCommandLine());
+            
+        //  Modification d'une ligne de commande
+            
+          //  CommandLine cl3 = new CommandLine();
+          //  cl3.setId(3);
+          //  cl3.setQuantity(10);
+          //  scl.updateCommandLine(cl2);
+          //  System.out.println(scl.getCommandLine());
+            
+        //  Suppression d'une ligne de commande
+            
+           // scl.deleteCommandLine(2);
+           // System.out.println(scl.getCommandLine());
+            
+    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            
+        //++++++++++++++++ Test Liste de Commande ++++++++++++++++++++++
+           // ServiceCommandList cls=new ServiceCommandList();
+           // CommandList cli1=new CommandList("Livré",4,1); // (status,price,idUser)
+           // CommandList cli2=new  CommandList("Livré",33,1);
+            
+       //  Ajout de 2 ligne de commande
+      // cls.addCommandList(cli1);
+      // cls.addCommandList(cli2);
+        // Affichage des CommandLists
+        //    System.out.println(cls.getCommandList());
+            
+         // Modification d'une ligne de commande
+           
+         //   CommandList cli3 = new CommandList(1,"En cours",4,1);
+         //   cls.updateCommandList(cli3);
+         //   System.out.println(cls.getCommandList());
+        //    
+        // Suppression d'une ligne de commande
+                
+         //  cls.deleteCommandList(4);
+         //   System.out.println(cls.getCommandList());
+            
+    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
             
     
 
