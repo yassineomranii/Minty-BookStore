@@ -34,6 +34,6 @@ public class testSerie {
         } catch (SQLException e) {
             System.out.println("Exception : "+e.getMessage());
         }
-
+        /* --- */
         }
 }
