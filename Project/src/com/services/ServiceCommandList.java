@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -65,7 +66,7 @@ public class ServiceCommandList {
 
     }
     
-     public void deleteListeCommande(int id) throws SQLException {
+     public void deleteCommandList(int id) throws SQLException {
         String request = "DELETE FROM `commandlist` WHERE id =" + id;
         Statement stm = cnx.createStatement();
         stm.executeUpdate(request);

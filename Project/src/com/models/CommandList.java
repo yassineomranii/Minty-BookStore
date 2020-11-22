@@ -66,6 +66,6 @@ public class CommandList {
     }
     
      public String toString() {
-        return "ListeCommande{" + "id=" + id + ", status=" + status + ", totalprice=" + totalprice + ", idUser="+ '}';
+        return "CommandList{" + "id=" + id + ", status=" + status + ", totalprice=" + totalprice + ", idUser="+ '}';
     }
 }

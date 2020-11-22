@@ -14,6 +14,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+
 /**
  *
  * @author ali
@@ -65,7 +66,7 @@ public class ServiceCommandLine {
 
     }
     
-     public void deleteListeCommande(int id) throws SQLException {
+     public void deleteCommandLine(int id) throws SQLException {
         String request = "DELETE FROM `commandline` WHERE id =" + id;
         Statement stm = cnx.createStatement();
         stm.executeUpdate(request);

@@ -66,7 +66,7 @@ public class CommandLine {
     
     
    public String toString() {
-        return "LigneCommande{" + "id=" + id + ", quantity=" + quantity + ", idCommandList=" +idCommandList+ ", idBook=" + idBook +'}';
+        return "CommandLine{" + "id=" + id + ", quantity=" + quantity + ", idCommandList=" +idCommandList+ ", idBook=" + idBook +'}';
     }
 
     
