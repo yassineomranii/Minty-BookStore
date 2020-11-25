@@ -26,8 +26,8 @@ public class ServiceBook {
     }
     public void addBook(Book b) throws SQLException {
         
-        String request = "INSERT INTO `books`(`id`, `title`, `description`, `idCategory`, `idAuthor`, `idLanguage`, `imageUrl`, `prix`, `rating`, `nbrPages`, `publishDate`, `quantity`)"
-                + " VALUES (NULL, '" + b.getTitle()  +"', '"+ b.getDescription() +"', '"+b.getIdCategory()+"', '"+b.getIdAuthor()+"', '"+b.getIdLanguage()+"', '"+b.getImageUrl()+ "', '"+b.getPrix()+"', '"+b.getRating()+"', '"+b.getNbrPages()+ "', '"+b.getPublishDate()+"', '"+b.getQuantity()+"')";
+        String request = "INSERT INTO `books` (`id`, `title`, `description`, `imageUrl`, `prix`, `quantity`, `rating`, `nbrPages`, `idAuthor`, `idCategory`, `idLanguage`, `idSerie`, `publishDate`) "
+                + " VALUES (NULL, '" + b.getTitle()  +"', '"+ b.getDescription() +"', '"+b.getImageUrl()+"', '"+b.getPrix()+"', '"+b.getQuantity()+"', '"+b.getRating()+ "', '"+b.getNbrPages()+"', '"+b.getIdAuthor()+"', '"+b.getIdCategory()+ "', '"+b.getIdLanguage()+"', '"+b.getIdSerie()+"', '"+b.getPublishDate() +"')";
        
         Statement stm = cnx.createStatement();
         stm.executeUpdate(request);
@@ -36,25 +36,27 @@ public class ServiceBook {
     
     public void updateBook(Book b) throws SQLException {
       
-        String req = "UPDATE `books` SET `title`=?,`description`=?,`idCategory`=?,`idAuthor`=?,"
-                + "`idLanguage`=?,`imageUrl`=?,`prix`=?,`rating`=?,`nbrPages`=?,`publishDate`=?,"
-                + "`quantity`=? "
+        String req = "UPDATE `books` SET `title`=?,`description`=?,`imageUrl`=?,"
+                + "`prix`=?,`quantity`=?,`rating`=?,`nbrPages`=?,"
+                + "`idAuthor`=?,`idCategory`=?,`idLanguage`=?,`idSerie`=?,"
+                + "`publishDate`=?"
                 + "WHERE `id` = ?";
         
         PreparedStatement pst = cnx.prepareStatement(req);
 
         pst.setString(1, b.getTitle());
         pst.setString(2, b.getDescription());
-        pst.setInt   (3, b.getIdCategory());
-        pst.setInt(4, b.getIdAuthor());
-        pst.setInt(5, b.getIdLanguage());
-        pst.setString(6, b.getImageUrl());
-        pst.setFloat(7, b.getPrix());
-        pst.setInt(8, b.getRating());
-        pst.setInt(9, b.getNbrPages());
-        pst.setString(10, b.getPublishDate());
-        pst.setInt(11, b.getQuantity());
-        pst.setInt(12, b.getId());
+        pst.setString(3, b.getImageUrl());
+        pst.setFloat(4, b.getPrix());
+        pst.setInt(5, b.getQuantity());
+        pst.setInt(6, b.getRating());
+        pst.setInt(7, b.getNbrPages());
+        pst.setInt(8, b.getIdAuthor());
+        pst.setInt(9, b.getIdCategory());
+        pst.setInt(10, b.getIdLanguage());
+        pst.setInt(11, b.getIdSerie());    
+        pst.setString(12, b.getPublishDate());
+        pst.setInt(13, b.getId());
         pst.executeUpdate();
 
     }
@@ -76,15 +78,16 @@ public class ServiceBook {
             b.setId(rst.getInt(1));
             b.setTitle(rst.getString(2));
             b.setDescription(rst.getString(3));
-            b.setIdCategory(rst.getInt(4));
-            b.setIdAuthor(rst.getInt(5));
-            b.setIdLanguage(rst.getInt(6));
-            b.setImageUrl(rst.getString(7));
-            b.setPrix(rst.getFloat(8));
-            b.setRating(rst.getInt(9));
-            b.setNbrPages(rst.getInt(10));
-            b.setPublishDate(rst.getString(11));
-            b.setQuantity(rst.getInt(12));
+            b.setImageUrl(rst.getString(4));
+            b.setPrix(rst.getFloat(5));
+            b.setQuantity(rst.getInt(6));
+            b.setRating(rst.getInt(7));
+            b.setNbrPages(rst.getInt(8));
+            b.setIdAuthor(rst.getInt(9));
+            b.setIdCategory(rst.getInt(10));
+            b.setIdLanguage(rst.getInt(11));
+            b.setIdSerie(rst.getInt(12));
+            b.setPublishDate(rst.getString(13));
             
             results.add(b);
         }
@@ -101,15 +104,24 @@ public class ServiceBook {
             b.setId(rst.getInt(1));
             b.setTitle(rst.getString(2));
             b.setDescription(rst.getString(3));
-            b.setIdCategory(rst.getInt(4));
-            b.setIdAuthor(rst.getInt(5));
-            b.setIdLanguage(rst.getInt(6));
-            b.setImageUrl(rst.getString(7));
-            b.setPrix(rst.getFloat(8));
-            b.setRating(rst.getInt(9));
-            b.setNbrPages(rst.getInt(10));
-            b.setPublishDate(rst.getString(11));
-            b.setQuantity(rst.getInt(12));
+            b.setImageUrl(rst.getString(4));
+            b.setPrix(rst.getFloat(5));
+            b.setQuantity(rst.getInt(6));
+            b.setRating(rst.getInt(7));
+            b.setNbrPages(rst.getInt(8));
+            b.setIdAuthor(rst.getInt(9));
+            b.setIdCategory(rst.getInt(10));
+            b.setIdLanguage(rst.getInt(11));
+            b.setIdSerie(rst.getInt(12));
+            b.setPublishDate(rst.getString(13));
+            
+            
+            
+            
+            
+            
+            
+            
             return b;
         }
 

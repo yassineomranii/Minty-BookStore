@@ -12,7 +12,7 @@ package com.models;
 public class Book {
     
     //			,							
-    private int id,idCategory,idAuthor,idLanguage,quantity,nbrPages,rating;
+    private int id,idCategory,idAuthor,idLanguage,quantity,nbrPages,rating,idSerie;
     private String title , description,imageUrl,publishDate;
     private float prix;
     
@@ -20,7 +20,7 @@ public class Book {
         
     }
 
-    public Book(int id, int idCategory, int idAuthor, int idLanguage, int quantity, int nbrPages, int rating, String title, String description, String imageUrl, String publishDate, float prix) {
+    public Book(int id, int idSerie, int idCategory, int idAuthor, int idLanguage, int quantity, int nbrPages, int rating, String title, String description, String imageUrl, String publishDate, float prix) {
         this.id = id;
         this.idCategory = idCategory;
         this.idAuthor = idAuthor;
@@ -33,9 +33,12 @@ public class Book {
         this.imageUrl = imageUrl;
         this.publishDate = publishDate;
         this.prix = prix;
+        this.idSerie = idSerie;
     }
-    public Book( int idCategory, int idAuthor, int idLanguage, int quantity, int nbrPages, int rating, String title, String description, String imageUrl, String publishDate, float prix) {
+    
+    public Book(int idSerie, int idCategory, int idAuthor, int idLanguage, int quantity, int nbrPages, int rating, String title, String description, String imageUrl, String publishDate, float prix) {
         
+        this.idSerie = idSerie;
         this.idCategory = idCategory;
         this.idAuthor = idAuthor;
         this.idLanguage = idLanguage;
@@ -47,7 +50,17 @@ public class Book {
         this.imageUrl = imageUrl;
         this.publishDate = publishDate;
         this.prix = prix;
+        
     }
+
+    public int getIdSerie() {
+        return idSerie;
+    }
+
+    public void setIdSerie(int idSerie) {
+        this.idSerie = idSerie;
+    }
+    
 
     public int getId() {
         return id;
@@ -147,8 +160,10 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book{" + "id=" + id + ", idCategory=" + idCategory + ", idAuthor=" + idAuthor + ", idLanguage=" + idLanguage + ", quantity=" + quantity + ", nbrPages=" + nbrPages + ", rating=" + rating + ", title=" + title + ", description=" + description + ", imageUrl=" + imageUrl + ", publishDate=" + publishDate + ", prix=" + prix + '}';
+        return "Book{" + "id=" + id + ", idCategory=" + idCategory + ", idAuthor=" + idAuthor + ", idLanguage=" + idLanguage + ", quantity=" + quantity + ", nbrPages=" + nbrPages + ", rating=" + rating + ", idSerie=" + idSerie + ", title=" + title + ", description=" + description + ", imageUrl=" + imageUrl + ", publishDate=" + publishDate + ", prix=" + prix + '}';
     }
+
+
     
     
     

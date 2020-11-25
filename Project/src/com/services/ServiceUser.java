@@ -49,8 +49,6 @@ public class ServiceUser {
         pst.setString(4, u.getNumTel());
         pst.setString(5, u.getAdresse());
         pst.setString(6, u.getRole());
-        pst.setString(5, u.getProfilePicture());
-        
         pst.setString(7, u.getProfilePicture());
         pst.setInt(8, u.getId());
         pst.executeUpdate();
