@@ -43,12 +43,15 @@ public class application extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
+       
         Parent root = FXMLLoader.load(getClass().getResource("views/home.fxml"));
 
         Scene scene = new Scene(root);
 
         stage.setScene(scene);
         stage.show();
+        stage.setResizable(false);
+        
     }
 
     /**
@@ -77,19 +80,19 @@ public class application extends Application {
         
         launch(args);
         
-        ServiceUser us = new ServiceUser();
-//         CRUD ENTITY USER BY Yasser
-        try {
-            //us.addUser(new User("yasser", "yasser.dghais@esprit.tn", "PASSWORD+58", "client", "52190201", "Nabeul", "profilePicture"));
-            //idUser=8
-//            us.updateUser(new User(32,"yasser DGHAIS", "yasser.dghais@esprit.tn", "PASSWORD+58", "ADMIN", "52190201", "Nabeul", "profilePicture"));
-            us.deleteUser(30);
-            
-//            System.out.println(us.getUser(32));
-            System.out.println(us.getUsers());
-        } catch (Exception e) {
-            System.out.println("Exception Table User");
-        }
+//        ServiceUser us = new ServiceUser();
+////         CRUD ENTITY USER BY Yasser
+//        try {
+//            //us.addUser(new User("yasser", "yasser.dghais@esprit.tn", "PASSWORD+58", "client", "52190201", "Nabeul", "profilePicture"));
+//            //idUser=8
+////            us.updateUser(new User(32,"yasser DGHAIS", "yasser.dghais@esprit.tn", "PASSWORD+58", "ADMIN", "52190201", "Nabeul", "profilePicture"));
+//            us.deleteUser(30);
+//            
+////            System.out.println(us.getUser(32));
+//            System.out.println(us.getUsers());
+//        } catch (Exception e) {
+//            System.out.println("Exception Table User");
+//        }
         //CRUD ENTITY BOOK By Yasser
 //        ServiceBook sb = new ServiceBook();
 //        try {
