@@ -8,7 +8,6 @@ package com.controllers;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
-import com.sun.javaws.progress.Progress;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -19,7 +18,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ProgressIndicator;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -27,62 +25,71 @@ import javafx.util.Duration;
 /**
  * FXML Controller class
  *
- * @author DellXPS
+ * @author MediaStudio
  */
-public class HomeController implements Initializable {
+public class SignUpController implements Initializable {
 
     /**
      * Initializes the controller class.
      */
-    @FXML ProgressIndicator pi;
+    
     @FXML
-    private JFXTextField textUsername;
+    private JFXButton BtnSignUp;
+
+    @FXML
+    private JFXTextField textUser;
 
     @FXML
     private JFXPasswordField textPassword;
 
     @FXML
-    private JFXButton jbtnSignUp;
+    private JFXTextField textEmail;
 
     @FXML
-    private JFXButton jbtnLLogin;
+    private JFXTextField textTel;
 
     @FXML
-    private ImageView gifLoading;
+    private JFXTextField textAdresse;
+
+    @FXML
+    private JFXTextField textpic;
+    @FXML
+    private ImageView gif;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-        // TODO
-        gifLoading.setVisible(false);
-        textUsername.setStyle("-fx-text-inner-color: #a0a2ab");
+        gif.setVisible(false);
+        textUser.setStyle("-fx-text-inner-color: #a0a2ab");
         textPassword.setStyle("-fx-text-inner-color: #a0a2ab");
+        textEmail.setStyle("-fx-text-inner-color: #a0a2ab");
+        textTel.setStyle("-fx-text-inner-color: #a0a2ab");
+        textAdresse.setStyle("-fx-text-inner-color: #a0a2ab");
+        textpic.setStyle("-fx-text-inner-color: #a0a2ab");
         
     }    
-    @FXML
-    public void loginAction(ActionEvent e){
-        gifLoading.setVisible(true);
+    
+    
+    public void signUpAction(ActionEvent e){
+        gif.setVisible(true);
         PauseTransition pt = new PauseTransition();
         pt.setDuration(Duration.seconds(3));
         pt.setOnFinished(ev -> {
-            System.out.println("Login Successfully");
-            gifLoading.setVisible(false);
+            System.out.println("Sign Up Successfully");
+            gif.setVisible(false);
         });
-        pt.play();  
+        pt.play(); 
         
     }
-    
-    @FXML
-    public void SignUpAction(ActionEvent e1) throws IOException{
-        
-        jbtnLLogin.getScene().getWindow().hide();
-        Stage signUp = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("views/signUp.fxml"));
+    public void loginAction(ActionEvent e1) throws IOException{
+        BtnSignUp.getScene().getWindow().hide();
+        Stage login = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("views/home.fxml"));
         
         Scene scene = new Scene(root);
-        signUp.setScene(scene);
-        signUp.show();
-        signUp.setResizable(false);
-        
+        login.setScene(scene);
+        login.show();
+        login.setResizable(false);
     }
+    
     
 }

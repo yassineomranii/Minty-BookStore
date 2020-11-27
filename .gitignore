@@ -1,3 +1,14 @@
-/Project/nbproject/private/
-/Project/build/
+./Project/nbproject/private/
+./Project/build/
+./Project/dist/
+./Project/nbproject/project.properties
+/JavaFXApplication9/nbproject/private/
 /Project/dist/
+**/nbproject/private/
+**/nbproject/Makefile-*.mk
+**/nbproject/Package-*.bash
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
